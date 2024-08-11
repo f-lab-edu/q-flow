@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../database/prisma.service';
+import { Question } from '@prisma/client';
 
 @Injectable()
 export class QuestionsService {
@@ -11,5 +12,9 @@ export class QuestionsService {
         title,
       },
     });
+  }
+
+  public getAllQuestions(): Promise<Question[]> {
+    return this.prisma.question.findMany({});
   }
 }
