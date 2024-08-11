@@ -12,4 +12,6 @@ export class QuestionsService {
       },
     });
   }
+
+  public async getAllQuestions() {}
 }
