@@ -16,6 +16,6 @@ export class QuestionsController {
     @Query('page') page: number = 1,
     @Query('limit') limit: number = 10,
   ) {
-    return this.questionsService.getQuestions(page, limit);
+    return this.questionsService.getQuestions(Number(page), Number(limit));
   }
 }
