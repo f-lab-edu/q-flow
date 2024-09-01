@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { QuestionsService } from './questions.service';
 import { SaveQuestionDto } from './dto/save-question.dto';
 
@@ -12,7 +12,10 @@ export class QuestionsController {
   }
 
   @Get()
-  public async getAllQuestions() {
-    return this.questionsService.getAllQuestions();
+  public async getQuestions(
+    @Query('page') page: number = 1,
+    @Query('limit') limit: number = 10,
+  ) {
+    return this.questionsService.getQuestions(page, limit);
   }
 }
