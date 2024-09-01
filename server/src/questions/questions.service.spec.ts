@@ -22,14 +22,14 @@ describe('QuestionsService', () => {
   it('should save a question', async () => {
     // given
     const title = 'Test Question';
-    await service.saveQuestion(title);
 
     // when
+    await service.saveQuestion(title);
+
+    // then
     const savedQuestion = await prismaService.question.findFirst({
       where: { title },
     });
-
-    // then
     expect(savedQuestion).toBeDefined();
     expect(savedQuestion.title).toBe(title);
   });
