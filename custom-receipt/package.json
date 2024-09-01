@@ -1,0 +1,38 @@
+{
+  "scripts": {
+    "init": "ts-node src/utils/node-native-printer/install/install_win.ts",
+    "test": "mocha src/test/**.ts src/test/**/*.ts -r node_modules/ts-node/register --exit"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "edge": "^7.10.1",
+    "edge-js": "^18.4.3",
+    "electron-edge": "^6.5.5",
+    "iconv-lite": "^0.6.3",
+    "inquirer": "^9.1.4",
+    "moment-timezone": "^0.5.40",
+    "pdfkit": "^0.13.0",
+    "pdfkit-table": "^0.1.99",
+    "serialport": "^10.5.0",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/inquirer": "^9.0.3",
+    "@types/mocha": "^10.0.1",
+    "@types/pdfkit": "^0.12.8",
+    "@types/sinon": "^10.0.13",
+    "@types/sinon-chai": "^3.2.9",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "chai": "^4.3.7",
+    "eslint": "8.22.0",
+    "eslint-config-standard-with-typescript": "^24.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "mocha": "^10.2.0",
+    "sinon": "^15.0.1",
+    "sinon-chai": "^3.7.0",
+    "typescript": "^4.9.4"
+  }
+}
