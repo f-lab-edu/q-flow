@@ -14,7 +14,18 @@ export class QuestionsService {
     });
   }
 
-  public getAllQuestions(): Promise<Question[]> {
-    return this.prisma.question.findMany({});
+  public async getQuestions(
+    page: number,
+    countPerPage: number,
+  ): Promise<{ questions: Question[]; totalCount: number }> {
+    const questions = await this.prisma.question.findMany({
+      skip: (page - 1) * countPerPage,
+      take: countPerPage,
+    });
+    const totalCount = await this.prisma.question.count();
+    return {
+      questions,
+      totalCount,
+    };
   }
 }
